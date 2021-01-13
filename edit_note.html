@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note</title>
+</head>
+<body>
+
+    <form method="post">
+    {% csrf_token %}
+    Subject: <input type="text" name="subject" value="{{subject}}">
+    Description: <input type="text" name="description" value="{{description}}">
+    Deadline: <input type="datetime-local" name="deadline" value="{{deadline}}">
+    <input name="id" value="{{id}}" type="hidden">
+    <button type="submit">Submit</button>
+  </form>
