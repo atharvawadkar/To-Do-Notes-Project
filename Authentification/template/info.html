@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>HOME PAGE</h1>
+
+<a href="{% url 'register'%}"> REGISTER</a>
+
+<a href="{% url 'login'%}"> LOGIN</a>
+
+{%if request.user.is_authenticated%}
+<P>User</P>
+<p>{{ request.user.username}}</p>
+<a href="{% url 'view1' %}">Home</a>
+<a href="{% url 'logout' %}">Logout</a>
+
+{%else %}
+ <a href="{% url 'login'%}"> LOGIN</a>
+<a href="{% url 'view1' %}">Home</a>
+{% endif %}
+
+</body>
+
+</html>
